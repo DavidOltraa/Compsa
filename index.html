@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulari amb Cookies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>FORMULARI</h1>
+    <form id="formulari">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom"><br>
+
+        <label for="cognom">Cognom:</label>
+        <input type="text" id="cognom" name="cognom"><br>
+
+        <input type="button" value="Enviar" onclick="guardarCookies()">
+    </form>
+
+    <script>
+        function guardarCookies() {
+            var nom = document.getElementById('nom').value;
+            var cognom = document.getElementById('cognom').value;
+
+            document.cookie = "nom=" + encodeURIComponent(nom);
+            document.cookie = "cognom=" + encodeURIComponent(cognom);
+
+            window.location.href = 'index.php';
+        }
+    </script>
+    
+</body>
+</html>
